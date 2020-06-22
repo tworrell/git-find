@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tworrell/git-find/static/css/main.ccc8cf52.chunk.css",
+    "main.js": "/tworrell/git-find/static/js/main.6ac6665c.chunk.js",
+    "main.js.map": "/tworrell/git-find/static/js/main.6ac6665c.chunk.js.map",
+    "runtime-main.js": "/tworrell/git-find/static/js/runtime-main.64bfd9cc.js",
+    "runtime-main.js.map": "/tworrell/git-find/static/js/runtime-main.64bfd9cc.js.map",
+    "static/js/2.58b84fa7.chunk.js": "/tworrell/git-find/static/js/2.58b84fa7.chunk.js",
+    "static/js/2.58b84fa7.chunk.js.map": "/tworrell/git-find/static/js/2.58b84fa7.chunk.js.map",
+    "index.html": "/tworrell/git-find/index.html",
+    "precache-manifest.f2da7ca082109f78317974a7d237d4fe.js": "/tworrell/git-find/precache-manifest.f2da7ca082109f78317974a7d237d4fe.js",
+    "service-worker.js": "/tworrell/git-find/service-worker.js",
+    "static/css/main.ccc8cf52.chunk.css.map": "/tworrell/git-find/static/css/main.ccc8cf52.chunk.css.map",
+    "static/js/2.58b84fa7.chunk.js.LICENSE.txt": "/tworrell/git-find/static/js/2.58b84fa7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.64bfd9cc.js",
+    "static/js/2.58b84fa7.chunk.js",
+    "static/css/main.ccc8cf52.chunk.css",
+    "static/js/main.6ac6665c.chunk.js"
+  ]
+}
