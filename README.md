@@ -11,6 +11,9 @@ Run `npm install`.
 
 To start your server, run `npm start` from the root directory of this project.
 
+### Live Project
+[GitFind](https://tworrell.github.io/git-find/)
+
 <b>Built with</b>
 - [VS Code](https://code.visualstudio.com/)
 - [React.js](https://reactjs.org/)
