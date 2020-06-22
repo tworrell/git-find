@@ -2,7 +2,7 @@
   "name": "github_hack",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/tworrell/git-find",
+  "homepage": "https://tworrell.github.io/git-find",
   "engines": {
     "npm": "6.9.0",
     "node": "10.16.3"
@@ -18,7 +18,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
