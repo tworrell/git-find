@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import './scss/style.scss';
+
 
 const API = 'https://api.github.com/users';
-class App extends React.Component {
+ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: 'theham3d',
+      username: 'tworrell',
       name:'',
       avatar:'',
       location:'',
@@ -34,10 +35,79 @@ class App extends React.Component {
           notFound: data.message
         })
       })
-      .catch((error) => console.log('Oops! . There Is A Problem') )
+      .catch((error) => console.log('Oops! An Error Occurred.') )
+  }
+  componentDidMount() {
+    this.fetchProfile(this.state.username);
+  }
+  render() {
+    return (
+      <div>
+         <section id="card">
+           <SearchProfile fetchProfile={this.fetchProfile.bind(this)}/>
+           <Profile data={this.state} />
+         </section>
+          <span className="taraFooter">GitHub-Find - Created By <a href="https://tworrell.github.io/TaraWorrellPortfolio/" target="_blank" title="Tara Worrell"><b>Tara Worrell</b></a></span>
+      </div>
+    )
+  }
+}
+class SearchProfile extends React.Component {
+  render() {
+    return (
+      <div className="search--box">
+         <form onSubmit={this.handleForm.bind(this)}>
+           <label><input type="search" ref="username" placeholder="Enter Username + Enter"/></label>
+         </form>
+      </div>
+    )
+  }
+  
+  handleForm(e) {
+   e.preventDefault();
+    let username = this.refs.username.value
+    this.props.fetchProfile(username);
+    this.refs.username.value = '';
   }
 }
 
-React.render(<App />, document.body);
+class Profile extends React.Component {
+  render() {
+    let data = this.props.data;
+    let followers = `${data.homeUrl}/followers`;
+    let repositories = `${data.homeUrl}?tab=repositories`;
+    let following = `${data.homeUrl}/following`;
+    if (data.notFound === 'Not Found')
+      return (
+         <div className="notfound">
+            <h2>Uh Oh !!!</h2>
+            <p>The Component could not find what you were searching for. Please Try Again!</p>
+         </div>
+      );
+      else
+      return (
+        <section className="github--profile">
+          <div className="github--profile__info">
+            <a href={data.homeUrl} target="_blank" title={data.name || data.username}><img src={data.avatar} alt={data.username}/></a>
+            <h2><a href={data.homeUrl} title={data.username} target="_blank">{data.name || data.username}</a></h2>
+            <h3>{data.location || 'I Live In My Mind'}</h3>
+          </div>
+          <div className="github--profile__state">
+            <ul>
+               <li>
+                  <a href={followers} target="_blank" title="Number Of Followers"><i>{data.followers}</i><span>Followers</span></a>
+               </li>
+               <li>
+                  <a href={repositories} target="_blank" title="Number Of Repositoriy"><i>{data.repos}</i><span>Repositories</span></a>
+               </li>
+               <li>
+                  <a href={following} target="_blank" title="Number Of Following"><i>{data.following}</i><span>Following</span></a>
+               </li>
+            </ul>
+          </div>
+        </section>
+      );
+  }
+}
 
 export default App;
